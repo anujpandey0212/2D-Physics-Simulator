@@ -16,7 +16,7 @@ export default class mouse{
         var factor=500;
 
         document.onmousedown=e=>{
-            console.log('mousedown')
+            console.log('mousedown');
             globalThis.x=e.x;
             globalThis.y=e.y;
             isfirstmousemove=0;
