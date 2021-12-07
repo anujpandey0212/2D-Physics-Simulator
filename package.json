@@ -1,0 +1,19 @@
+{
+  "name": "canvas-text-master",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "install": "^0.13.0",
+    "npm": "^8.2.0",
+    "parcel": "^2.0.1",
+    "parcel-bundler": "^1.12.5",
+    "typescript": "^4.5.2"
+  }
+}
