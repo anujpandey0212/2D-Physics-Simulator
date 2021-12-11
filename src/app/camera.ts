@@ -14,7 +14,7 @@ export default class Camera {
 
 	protected static ZOOM_IN_FACTOR = 0.96;
 	public canvas: HTMLCanvasElement;
-	private ctx: CanvasRenderingContext2D;
+	public ctx: CanvasRenderingContext2D;
 
 	/** The zoom factor */
 	protected scale = Camera.METER_TO_PIXEL;
@@ -104,7 +104,6 @@ export default class Camera {
 	public translate(x: number, y: number) {
 		this.translation.x += x;
 		this.translation.y += y;
-		console.log("translate function was once called");
 	}
 
 	// getter/setters
