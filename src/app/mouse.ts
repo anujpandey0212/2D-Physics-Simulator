@@ -1,6 +1,6 @@
 import camera from ".";
 import { drawer, objects } from "../engine/drawer";
-export default class mouse{
+export default class mouse{ 
     constructor(){
         document.onwheel = e => {
 			if (e.deltaY > 0) {
@@ -22,12 +22,12 @@ export default class mouse{
             ismousedown=1;
         }
         document.onmousemove=e=>{
-            objects[0].centerx=e.x*0.01-(camera.ctx.canvas.width/2);
-            objects[0].centery=e.y*0.01-(camera.ctx.canvas.height/2);
+            objects[0].centerx=(((e.x*camera.ctx.canvas.width)/window.innerWidth)-(camera.ctx.canvas.width/2))*0.01;
+            objects[0].centery=-(((e.y*camera.ctx.canvas.height)/window.innerHeight)-(camera.ctx.canvas.height/2))*0.01;
+           
             if(objects[0].centerx===objects[1].centerx){
                 console.log("yay");
             }
-            // console.log(objects[0].centerx);
             if(ismousedown==1){
                 if(isfirstmousemove==0){
                     camera.translate((e.x-globalThis.x)/factor,-(e.y-globalThis.y)/factor);
