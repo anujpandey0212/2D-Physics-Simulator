@@ -2,6 +2,7 @@ import {drawer} from "./drawer";
 import { objects } from "./drawer";
 export default class physics{
     public  gravity:number=9;
+    public gravity_enabled:boolean=true;
 
     public static iscolliding(object1,object2):boolean{
         var center_dis=object1.radius+object2.radius;
@@ -15,9 +16,13 @@ export default class physics{
         }
     }
 
-    public gravitational_force(){
-        
-    }
+    // public gravitational_force(){
+    //     if(this.gravity_enabled){
+    //         for(var i=0;i<objects.length;i++){
+    //             objects[i]=objects[i].velocityy+this.gravity*
+    //         }
+    //     }
+    // }
 
 }
 

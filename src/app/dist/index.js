@@ -1082,12 +1082,16 @@ var physics = /*#__PURE__*/function () {
     _classCallCheck(this, physics);
 
     this.gravity = 9;
+    this.gravity_enabled = true; // public gravitational_force(){
+    //     if(this.gravity_enabled){
+    //         for(var i=0;i<objects.length;i++){
+    //             objects[i]=objects[i].velocityy+this.gravity*
+    //         }
+    //     }
+    // }
   }
 
-  _createClass(physics, [{
-    key: "gravitational_force",
-    value: function gravitational_force() {}
-  }], [{
+  _createClass(physics, null, [{
     key: "iscolliding",
     value: function iscolliding(object1, object2) {
       var center_dis = object1.radius + object2.radius;
@@ -1129,6 +1133,8 @@ var drawer_1 = require("./drawer");
 
 var physics_1 = __importDefault(require("./physics"));
 
+var app_1 = __importDefault(require("../app"));
+
 var collision = /*#__PURE__*/function () {
   function collision() {
     _classCallCheck(this, collision);
@@ -1143,7 +1149,8 @@ var collision = /*#__PURE__*/function () {
             var colliding = physics_1.default.iscolliding(drawer_1.objects[i], drawer_1.objects[j]);
 
             if (colliding == true) {
-              console.log("colliding");
+              console.log("bro what");
+              console.log("scale is : ", app_1.default.getScale());
             }
           }
         }
@@ -1155,7 +1162,7 @@ var collision = /*#__PURE__*/function () {
 }();
 
 exports.collision = collision;
-},{"./drawer":"../engine/drawer.ts","./physics":"../engine/physics.ts"}],"index.ts":[function(require,module,exports) {
+},{"./drawer":"../engine/drawer.ts","./physics":"../engine/physics.ts","../app":"index.ts"}],"index.ts":[function(require,module,exports) {
 "use strict";
 
 var __importDefault = this && this.__importDefault || function (mod) {
@@ -1240,7 +1247,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65016" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56143" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
